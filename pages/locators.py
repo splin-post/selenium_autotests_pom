@@ -15,5 +15,9 @@ class ProductPageLocators():
     PRODUCT_PRICE = (By.CSS_SELECTOR, '.product_main>p')
 
 class CartPageLocators():
-    PRODUCT_NAME = (By.CSS_SELECTOR, '.alert>.alertinner')
+    PRODUCT_NAME = (By.CSS_SELECTOR, '.alert>.alertinner>strong')
     PRODUCT_PRICE = (By.CSS_SELECTOR, '.alert-info>.alertinner>p')
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
