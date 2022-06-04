@@ -17,7 +17,13 @@ class ProductPageLocators():
 class CartPageLocators():
     PRODUCT_NAME = (By.CSS_SELECTOR, '.alert>.alertinner>strong')
     PRODUCT_PRICE = (By.CSS_SELECTOR, '.alert-info>.alertinner>p')
+    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, '#content_inner>p')
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    CART_LINK = (By.CSS_SELECTOR, "span>a.btn.btn-default")
+
+
+
+
