@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators, CartPageLocators
+import time
 
 
 class ProductPage(BasePage):
@@ -10,15 +11,17 @@ class ProductPage(BasePage):
     def should_be_add_to_cart_checks(self):
         self.should_be_correct_product_name()
         self.should_be_correct_product_price()
-        self.should_not_be_success_message()
-
+        
 
 
     def should_be_correct_product_name(self):
         product_page_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
-        cart_page_name_list = self.browser.find_element(*CartPageLocators.PRODUCT_NAME).text.split()[:-6]
+        cart_page_name_list = self.browser.find_element(*CartPageLocators.PRODUCT_NAME).text#.split()[:-6]
         cart_page_name = ' '.join(cart_page_name_list)
-        assert product_page_name == cart_page_name, 'The product name in cart unequal to product name in product page '
+        print(f'Название продукта на странице товара {product_page_name}')
+        print(f'Название продукта вкорзине {cart_page_name_list}')
+        #time.sleep(300)
+        assert product_page_name == cart_page_name_list, 'The product name in cart unequal to product name in product page '
 
 
     def should_be_correct_product_price(self):
